@@ -16,7 +16,7 @@ setup(
     long_description='',
     author='Yuez',
     author_email='i@yuez.me',
-    url='',
+    url='https://github.com/zgs225/dingtalk_crypto',
     packages=['dingtalk_crypto', 'tests'],
     install_requires=['pycrypto'],
     zip_safe=False,
