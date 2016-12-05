@@ -17,7 +17,7 @@ setup(
     author='Yuez',
     author_email='i@yuez.me',
     url='',
-    packages=['dingtalk_crypto'],
+    packages=['dingtalk_crypto', 'tests'],
     install_requires=['pycrypto'],
     classifiers=(
         'Development Status :: 5 - Production/Stable',
