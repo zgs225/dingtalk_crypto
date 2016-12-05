@@ -23,7 +23,6 @@ setup(
     classifiers=(
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
-        'Natural Language :: Chinese',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
