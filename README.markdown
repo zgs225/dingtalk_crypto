@@ -7,6 +7,11 @@ DingTalkCrypto
 
 `pip install dingtalk_crypto`
 
+## 支持
+
+已经测试过的 python 版本有 python2.7 和 python3.1。
+
 ## 使用示例
 
 参考 `tests/test_crypto.py` 文件。
+
