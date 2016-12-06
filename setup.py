@@ -11,7 +11,7 @@ def read(file_name):
 
 setup(
     name='dingtalk_crypto',
-    version='1.0.1',
+    version='1.0.2',
     description='钉钉加密解密工具',
     long_description='',
     author='Yuez',

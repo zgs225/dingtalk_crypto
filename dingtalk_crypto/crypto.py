@@ -7,6 +7,7 @@ import struct
 from Crypto import Random
 from Crypto.Cipher import AES
 from .pkcs7 import PKCS7
+from .utils import get_timestamp, random_alpha
 
 
 class DingTalkCrypto(object):
@@ -74,7 +75,20 @@ class DingTalkCrypto(object):
         """
         return self._make_signature(encrypt_text, timestamp, nonce, self._token) == signature
 
-    def _make_signature(self, encrypt_text, timestamp, nonce, token):
+    def sign(self, encrypt_text):
+        """
+        给加密的信息生成签名
+        :param encrypt_text: str
+        :return: signature, timestamp, nonce
+        """
+        token = self._token
+        timestamp = str(get_timestamp())
+        nonce = random_alpha()
+        signature = self._make_signature(encrypt_text, timestamp, nonce, token)
+        return signature, timestamp, nonce
+
+    @staticmethod
+    def _make_signature(encrypt_text, timestamp, nonce, token):
         """
         生成签名
         :param encrypt_text: str

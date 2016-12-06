@@ -36,3 +36,8 @@ class TestCrypto:
 
     def test_check_signature(self):
         assert crypto.check_signature(encrypt_text, timestamp, nonce, signature)
+
+    def test_sign(self):
+        msg = crypto.encrypt('hello world')
+        actual_sig, actual_time, actual_nonce = crypto.sign(msg)
+        assert True
