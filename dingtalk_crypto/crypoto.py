@@ -72,8 +72,19 @@ class DingTalkCrypto(object):
         :param signature: 签名
         :return: boolean
         """
-        obj = hashlib.sha1(''.join(sorted([self._token, timestamp, nonce, encrypt_text])))
-        return obj.hexdigest() == signature
+        return self._make_signature(encrypt_text, timestamp, nonce, self._token) == signature
+
+    def _make_signature(self, encrypt_text, timestamp, nonce, token):
+        """
+        生成签名
+        :param encrypt_text: str
+        :param timestamp: str
+        :param nonce: str
+        :param token: str
+        :return: str
+        """
+        obj = hashlib.sha1(''.join(sorted([token, timestamp, nonce, encrypt_text])))
+        return obj.hexdigest()
 
     @property
     def aes_key(self):
